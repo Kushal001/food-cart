@@ -1,0 +1,44 @@
+.meals {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 700px;
+}
+
+/* meals description */
+
+.left {
+  display: flex;
+
+  align-items: center;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+}
+
+.image img {
+  width: 90px;
+  height: 90px;
+
+  margin-right: 16px;
+}
+
+.food-descriptions:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.food-title {
+  font-size: 18px;
+}
+
+.food-description {
+  font-size: 14px;
+  color: #929292;
+
+  text-transform: capitalize;
+}
+
+/* add to cart and add amount */ ;

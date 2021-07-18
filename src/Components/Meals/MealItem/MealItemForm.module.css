@@ -1,0 +1,51 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input {
+  margin-bottom: 8px;
+}
+
+.label {
+  font-size: 14px;
+  color: #929292;
+  margin-right: 8px;
+}
+
+.input {
+  display: flex;
+
+  padding: 4px 8px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 14px;
+
+  border: none;
+  background-color: #ededed;
+}
+
+.input:focus {
+  background-color: #fcf3c5;
+  outline: none;
+}
+
+.button {
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 16px;
+  background-color: #ffef9e;
+
+  transition: all 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  background-color: #f9e47c;
+}
+
+.invalid {
+  font-size: 12px;
+  color: #ff4539;
+}

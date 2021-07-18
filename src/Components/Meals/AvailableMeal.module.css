@@ -1,0 +1,10 @@
+.meals-container {
+  margin-top: 75px;
+  background-color: #fff;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 72px;
+}
+
+.meals-container > *:not(:last-child) {
+  margin-bottom: 64px;
+}

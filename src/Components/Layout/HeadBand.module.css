@@ -1,0 +1,10 @@
+.HeadBand {
+  font-size: 12px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ffd60a;
+}
