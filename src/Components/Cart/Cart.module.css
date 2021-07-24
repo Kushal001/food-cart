@@ -1,3 +1,14 @@
+.cart {
+  height: 75vh;
+  overflow-y: scroll;
+  /* scrollbar-width: none; */
+  overflow-x: hidden;
+}
+
+.cart::-webkit-scrollbar {
+  display: none;
+}
+
 .header {
   margin-bottom: 32px;
 }
@@ -18,3 +29,58 @@
   display: flex;
   flex-direction: column;
 } */
+
+/* Totals; subtotal, discount, total */
+.totals {
+  margin-top: 120px;
+}
+
+.total-amount {
+  font-size: 14px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-amount:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.total-amount-title {
+  color: #929292;
+}
+
+.total-seperator {
+  border-top: 1px dashed #929292;
+  margin: 20px 0;
+}
+
+.total-amount-number {
+  font-weight: 600;
+}
+
+/* Buttons */
+
+.buttons {
+  margin-top: 40px;
+}
+
+.btn {
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 13px 0;
+}
+
+.btn-submit {
+  background-color: #ffd60a;
+}
+
+.btn-cancel {
+  background-color: #000;
+  color: #fff;
+}

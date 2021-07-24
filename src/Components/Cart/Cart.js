@@ -59,6 +59,56 @@ const Cart = (props) => {
         </div>
 
         {cartItem}
+
+        <div className={classes.totals}>
+          <div className={classes["total-amount"]}>
+            <p className={classes["total-amount-title"]}>
+              Subtotal
+            </p>
+            <p className={classes["total-amount-number"]}>
+              $25
+            </p>
+          </div>
+
+          <div className={classes["total-amount"]}>
+            <p className={classes["total-amount-title"]}>
+              Delivery
+            </p>
+            <p className={classes["total-amount-number"]}>
+              $1.25
+            </p>
+          </div>
+
+          <div className={classes["total-seperator"]}></div>
+
+          <div className={classes["total-amount"]}>
+            <p className={classes["total-amount-title"]}>
+              Total
+            </p>
+            <p className={classes["total-amount-number"]}>
+              $26.25
+            </p>
+          </div>
+        </div>
+
+        <div className={classes.buttons}>
+          <button
+            className={[
+              classes.btn,
+              classes["btn-submit"],
+            ].join(" ")}
+          >
+            Place Order
+          </button>
+          <button
+            className={[
+              classes.btn,
+              classes["btn-cancel"],
+            ].join(" ")}
+          >
+            Cancel
+          </button>
+        </div>
       </div>
     </Modal>
   );
