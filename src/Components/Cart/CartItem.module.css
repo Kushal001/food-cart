@@ -1,0 +1,59 @@
+.cart-item {
+  width: 500px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.food-descriptions {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.food-name {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.food-description {
+  color: #929292;
+  font-weight: 300;
+}
+
+.image img {
+  height: 90px;
+  width: 90px;
+  margin-right: 8px;
+}
+
+.changeAmount {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.changeAmount > *:not(:last-child) {
+  margin-right: 8px;
+}
+
+.amount {
+  font-size: 14px;
+  color: #929292;
+  margin-bottom: 16px;
+}
+
+.amount span {
+  background-color: #f2f2f2;
+  display: inline-block;
+  font-weight: 900;
+  color: #000;
+}
+
+.number {
+  padding: 4px 10px;
+}

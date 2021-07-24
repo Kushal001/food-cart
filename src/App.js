@@ -3,7 +3,7 @@ import "./App.css";
 
 import Header from "./Components/Layout/Header";
 import Meals from "./Components/Meals/Meals";
-import Modal from "./Components/UI/Modal";
+import Cart from "./Components/Cart/Cart";
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(true);
@@ -14,11 +14,7 @@ function App() {
 
   return (
     <Fragment>
-      {isCartOpen && (
-        <Modal onClose={cartCloseHandler}>
-          Hello modal
-        </Modal>
-      )}
+      {isCartOpen && <Cart onClose={cartCloseHandler} />}
       <Header />
       <main className="main">
         <Meals />

@@ -1,0 +1,20 @@
+.header {
+  margin-bottom: 32px;
+}
+
+.heading {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.header-caption {
+  font-size: 14px;
+  color: #929292;
+  font-weight: 300;
+}
+/* 
+.content {
+  display: flex;
+  flex-direction: column;
+} */
