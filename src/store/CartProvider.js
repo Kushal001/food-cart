@@ -9,8 +9,44 @@ const deafultCartState = {
 
 const cartReducer = (state, action) => {
   if (action.type === "ADD") {
-    console.log("item added", action.item);
-    return deafultCartState;
+    console.log(action.item.id, state.items.id);
+
+    const updatedTotalAmount =
+      state.totalAmount +
+      action.item.amount * action.item.price;
+
+    console.log([].findIndex((e) => e.id === 5));
+
+    const existingItemIndex = state.items.findIndex(
+      (item) => item.id === action.item.id
+    );
+
+    const existingItem = state.items[existingItemIndex];
+
+    let updatedItems;
+
+    if (existingItem) {
+      const updatedItem = {
+        ...existingItem,
+        amount: existingItem.amount + action.item.amount,
+      };
+
+      updatedItems = [...state.items];
+
+      updatedItems[existingItemIndex] = updatedItem;
+    } else {
+      updatedItems = state.items.concat(action.item);
+    }
+
+    console.log({
+      items: updatedItems,
+      totalAmount: updatedTotalAmount,
+    });
+
+    return {
+      items: updatedItems,
+      totalAmount: updatedTotalAmount,
+    };
   }
 
   if (action.type === "REMOVE") {
