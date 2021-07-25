@@ -27,7 +27,7 @@ const Header = (props) => {
         </div>
 
         <div className={classes["nav-right"]}>
-          <HeaderCartButton />
+          <HeaderCartButton clicked={props.openCart} />
         </div>
       </nav>
 

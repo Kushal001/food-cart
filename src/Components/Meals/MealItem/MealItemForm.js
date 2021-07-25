@@ -20,7 +20,9 @@ const MealItemForm = (props) => {
       setAmountValid(false);
       return;
     }
-    alert("form submited" + typeof amount);
+
+    props.onAddToCart(amount);
+    setAmountValid(true);
   };
 
   return (
@@ -38,16 +40,17 @@ const MealItemForm = (props) => {
           min="1"
           defaultValue="1"
         />
-        {!amountValid && (
-          <p className={classes.invalid}>
-            Please enter amount from 1 - 5
-          </p>
-        )}
       </div>
 
       <button className={classes.button}>
         Add To Cart
       </button>
+
+      {!amountValid && (
+        <p className={classes.invalid}>
+          Please enter amount from 1 - 5
+        </p>
+      )}
     </form>
   );
 };

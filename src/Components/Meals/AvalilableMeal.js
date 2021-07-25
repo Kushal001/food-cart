@@ -44,6 +44,7 @@ const AvailableMeals = (props) => {
     <div className={classes["meals-container"]}>
       {meals.map((meal) => (
         <MealItem
+          id={meal.id}
           name={meal.name}
           image={meal.image}
           description={meal.description}
