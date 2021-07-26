@@ -35,7 +35,7 @@ const MealItem = (props) => {
             {props.description}
           </p>
           <p className={classes["food-price"]}>
-            ${`${props.price}`}
+            ${`${parseInt(props.price).toFixed(2)}`}
           </p>
         </div>
       </div>

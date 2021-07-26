@@ -1,48 +1,47 @@
+import { useContext } from "react";
+
 import classes from "./Cart.module.css";
 
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 
-// Temporary
-import Sushi from "../../Assets/Img/Sushi.jpg";
-import Schnitzel from "../../Assets/Img/Schnitzel.jpg";
-import BarbequeBurger from "../../Assets/Img/BarbequeBurger.jpg";
+import CartContext from "../../store/cart-context";
 
 const Cart = (props) => {
-  const temporaryList = [
-    {
-      id: "f001",
-      name: "Sushi",
-      description: "finesh fish and veggies",
-      price: "22.9",
-      image: Sushi,
-    },
+  const cartCtx = useContext(CartContext);
 
-    {
-      id: "f002",
-      name: "Schnitzel",
-      description: "a german speciality",
-      price: "15.5",
-      image: Schnitzel,
-    },
-    {
-      id: "f003",
-      name: "Barbeque burger",
-      description: "barbeque greatness with bread",
-      price: "13",
-      image: BarbequeBurger,
-    },
-  ];
+  const foodAmount = parseInt(cartCtx.totalAmount);
+  const tax = 1.25;
+
+  console.log(typeof cartCtx.totalAmount.toFixed(2));
+
+  const totalAmount = foodAmount + tax;
+
+  const onCartItemAddHandler = (item) => {
+    console.log("1");
+    cartCtx.addItem({ ...item, amount: 1 });
+  };
+
+  const onCartItemRemoveHandler = () => {};
 
   const cartItem = (
     <ul className={classes.content}>
-      {temporaryList.map((item) => (
+      {cartCtx.items.map((item) => (
         <CartItem
           key={item.id}
           name={item.name}
           description={item.description}
           price={item.price}
           image={item.image}
+          amount={item.amount}
+          onCartItemAddHandler={onCartItemAddHandler.bind(
+            null,
+            item
+          )}
+          onCartItemRemoveHandler={onCartItemRemoveHandler.bind(
+            null,
+            item.id
+          )}
         />
       ))}
     </ul>
@@ -66,7 +65,7 @@ const Cart = (props) => {
               Subtotal
             </p>
             <p className={classes["total-amount-number"]}>
-              $25
+              ${foodAmount.toFixed(2)}
             </p>
           </div>
 
@@ -75,7 +74,7 @@ const Cart = (props) => {
               Delivery
             </p>
             <p className={classes["total-amount-number"]}>
-              $1.25
+              ${tax}
             </p>
           </div>
 
@@ -86,7 +85,7 @@ const Cart = (props) => {
               Total
             </p>
             <p className={classes["total-amount-number"]}>
-              $26.25
+              ${totalAmount.toFixed(2)}
             </p>
           </div>
         </div>

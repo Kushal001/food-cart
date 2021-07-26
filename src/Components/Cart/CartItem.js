@@ -23,19 +23,26 @@ const CartItem = (props) => {
             {props.description}
           </div>
           <div className={classes["food-price"]}>
-            {props.price}
+            {props.price.toFixed(2)}
           </div>
         </div>
       </div>
       <div className={classes.right}>
         <div className={classes.amount}>
-          Amount: <span className={classes.number}>1</span>
+          Amount:{" "}
+          <span className={classes.number}>
+            {props.amount}
+          </span>
         </div>
         <div className={classes.changeAmount}>
-          <AmountChangeButton>
+          <AmountChangeButton
+            clicked={props.onCartItemAddHandler}
+          >
             <PlusSvg />
           </AmountChangeButton>
-          <AmountChangeButton>
+          <AmountChangeButton
+            clicked={props.onCartItemRemoveHandler}
+          >
             <MinusSvg />
           </AmountChangeButton>
         </div>
