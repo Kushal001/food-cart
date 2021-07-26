@@ -18,11 +18,12 @@ const Cart = (props) => {
   const totalAmount = foodAmount + tax;
 
   const onCartItemAddHandler = (item) => {
-    console.log("1");
     cartCtx.addItem({ ...item, amount: 1 });
   };
 
-  const onCartItemRemoveHandler = () => {};
+  const onCartItemRemoveHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
 
   const cartItem = (
     <ul className={classes.content}>
