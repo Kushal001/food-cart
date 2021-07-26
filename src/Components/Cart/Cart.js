@@ -25,6 +25,10 @@ const Cart = (props) => {
     cartCtx.removeItem(id);
   };
 
+  const onSubmit = () => {
+    alert("ordering...");
+  };
+
   const cartItem = (
     <ul className={classes.content}>
       {cartCtx.items.map((item) => (
@@ -97,6 +101,7 @@ const Cart = (props) => {
               classes.btn,
               classes["btn-submit"],
             ].join(" ")}
+            onClick={onSubmit}
           >
             Place Order
           </button>
@@ -105,6 +110,7 @@ const Cart = (props) => {
               classes.btn,
               classes["btn-cancel"],
             ].join(" ")}
+            onClick={props.onClose}
           >
             Cancel
           </button>
