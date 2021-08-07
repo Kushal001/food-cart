@@ -11,7 +11,7 @@ const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
   const foodAmount = parseInt(cartCtx.totalAmount);
-  const tax = 1.25;
+  const tax = 1;
 
   console.log(typeof cartCtx.totalAmount.toFixed(2));
 
@@ -39,14 +39,8 @@ const Cart = (props) => {
           price={item.price}
           image={item.image}
           amount={item.amount}
-          onCartItemAddHandler={onCartItemAddHandler.bind(
-            null,
-            item
-          )}
-          onCartItemRemoveHandler={onCartItemRemoveHandler.bind(
-            null,
-            item.id
-          )}
+          onCartItemAddHandler={onCartItemAddHandler.bind(null, item)}
+          onCartItemRemoveHandler={onCartItemRemoveHandler.bind(null, item.id)}
         />
       ))}
     </ul>
@@ -66,29 +60,21 @@ const Cart = (props) => {
 
         <div className={classes.totals}>
           <div className={classes["total-amount"]}>
-            <p className={classes["total-amount-title"]}>
-              Subtotal
-            </p>
+            <p className={classes["total-amount-title"]}>Subtotal</p>
             <p className={classes["total-amount-number"]}>
               ${foodAmount.toFixed(2)}
             </p>
           </div>
 
           <div className={classes["total-amount"]}>
-            <p className={classes["total-amount-title"]}>
-              Delivery
-            </p>
-            <p className={classes["total-amount-number"]}>
-              ${tax}
-            </p>
+            <p className={classes["total-amount-title"]}>Delivery</p>
+            <p className={classes["total-amount-number"]}>${tax}</p>
           </div>
 
           <div className={classes["total-seperator"]}></div>
 
           <div className={classes["total-amount"]}>
-            <p className={classes["total-amount-title"]}>
-              Total
-            </p>
+            <p className={classes["total-amount-title"]}>Total</p>
             <p className={classes["total-amount-number"]}>
               ${totalAmount.toFixed(2)}
             </p>
@@ -97,19 +83,13 @@ const Cart = (props) => {
 
         <div className={classes.buttons}>
           <button
-            className={[
-              classes.btn,
-              classes["btn-submit"],
-            ].join(" ")}
+            className={[classes.btn, classes["btn-submit"]].join(" ")}
             onClick={onSubmit}
           >
             Place Order
           </button>
           <button
-            className={[
-              classes.btn,
-              classes["btn-cancel"],
-            ].join(" ")}
+            className={[classes.btn, classes["btn-cancel"]].join(" ")}
             onClick={props.onClose}
           >
             Cancel

@@ -13,7 +13,7 @@ const AvailableMeals = (props) => {
       id: "f001",
       name: "Sushi",
       description: "finesh fish and veggies",
-      price: "22.9",
+      price: "22",
       image: Sushi,
     },
 
@@ -21,7 +21,7 @@ const AvailableMeals = (props) => {
       id: "f002",
       name: "Schnitzel",
       description: "a german speciality",
-      price: "15.5",
+      price: "15",
       image: Schnitzel,
     },
     {
@@ -35,7 +35,7 @@ const AvailableMeals = (props) => {
       id: "f003",
       name: "Green bowl",
       description: "healthy & green",
-      price: "18.99",
+      price: "18",
       image: GreenBowl,
     },
   ];
