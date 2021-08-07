@@ -8,6 +8,9 @@ import CartItem from "./CartItem";
 import CartContext from "../../store/cart-context";
 
 const Cart = (props) => {
+  // TODO:
+  // 1. move total amount to CartProvider.
+
   const cartCtx = useContext(CartContext);
 
   const foodAmount = parseInt(cartCtx.totalAmount);
@@ -15,6 +18,7 @@ const Cart = (props) => {
 
   console.log(typeof cartCtx.totalAmount.toFixed(2));
 
+  // BUG: total amount is updated in this component doesnot update the total amount in context which is the real total amount.
   const totalAmount = foodAmount + tax;
 
   const onCartItemAddHandler = (item) => {
